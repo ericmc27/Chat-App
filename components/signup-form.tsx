@@ -11,6 +11,7 @@ export default function Form() {
     const name = formData.get("name") as string
     const email = formData.get("email") as string
     const password = formData.get("password") as string
+    
     const response = await signUp.email({name, email, password})
 
     if(response.error?.status === 401){
@@ -25,6 +26,7 @@ export default function Form() {
       onSubmit={handleOnSubmit}
       className="flex flex-col justify-center items-center h-120 w-120 rounded gap-5 bg-blue-200"
     >
+   
       <label className="text-2xl" htmlFor="name">NAME</label>
       <input name="name" type="text" className="border rounder" />
 
@@ -34,7 +36,7 @@ export default function Form() {
       <label className="text-2xl" htmlFor="password">PASSWORD</label>
       <input name="password" type="password" className="border rounded" />
 
-      <button type="submit" className="border">login</button>
+      <button type="submit" className="border">SIGNUP</button>
     </form>
   )
 }
